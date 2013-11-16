@@ -8,10 +8,18 @@ class Dish
   end
 
   def red_meat?
-    @tags.include?(:beef) || @tags.include?(:lamb)
+    (@tags & [:beef, :lamb, :pork]).size > 0
   end
 
   def chicken?
     @tags.include? :chicken
+  end
+
+  def seafood?
+    @tags.include? :seafood
+  end
+
+  def meat?
+    red_meat? || seafood? || chicken?
   end
 end
