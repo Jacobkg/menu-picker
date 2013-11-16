@@ -12,7 +12,8 @@ FAVORITES = [  Dish.new("Tomato Sauce w/ Onion and Butter"),
                Dish.new("Mushroom Risotto"),
                Dish.new("Pan Roasted Chicken", :chicken),
                Dish.new("Pan Roasted Fish", :seafood),
-               Dish.new("Pan seared scallops", :seafood) ]
+               Dish.new("Pan seared scallops", :seafood),
+               Dish.new("Pan Seared Filet Mignon", :beef) ]
 
 NEW_DISHES = [  Dish.new("Beef Tacos", :beef),
                 Dish.new("Enchiladas Verdes", :chicken),
@@ -22,7 +23,8 @@ NEW_DISHES = [  Dish.new("Beef Tacos", :beef),
                 Dish.new("Sauteed chicken cutlets w/ porcini sauce", :chicken),
                 Dish.new("Chicken Scarparsello", :chicken),
                 Dish.new("Simple roast rack of lamb", :lamb),
-                Dish.new("Thin crust pizza") ]
+                Dish.new("Hearty Minestrone Soup"),
+                Dish.new("Seared scallops with brussel sprouts and bacon", :seafood) ]
 
 RULES = [ Rule.new(:red_meat?, :max, 1),
           Rule.new(:chicken?, :max, 2),
