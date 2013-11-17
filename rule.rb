@@ -6,8 +6,8 @@ class Rule
     @number = number
   end
 
-  def accepts?(dishes)
-    match_count = dishes.count {|dish| dish.public_send(@predicate) }
+  def accepts?(items)
+    match_count = items.count {|item| item.public_send(@predicate) }
     if @type == :max
       match_count <= @number
     elsif @type == :min
