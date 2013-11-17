@@ -1,14 +1,13 @@
 class Selector
 
-  def initialize(favorite_list, new_list)
-    @favorite_list = favorite_list
-    @new_list = new_list
+  def initialize(list)
+    @list = list
   end
 
-  def select(rules = [])
+  def select(rules)
     loop do
-      choices = (@favorite_list.sample(3) + @new_list.sample(2)).shuffle
-      if rules.empty? || rules.map {|rule| rule.accepts?(choices)}.all?
+      choices = @list.sample(5)
+      if rules.map {|rule| rule.accepts?(choices)}.all?
         return choices
       end
     end

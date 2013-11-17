@@ -7,6 +7,10 @@ class Dish
     @tags = tags
   end
 
+  def new?
+    @tags.include? :new
+  end
+
   def red_meat?
     (@tags & [:beef, :lamb, :pork]).size > 0
   end

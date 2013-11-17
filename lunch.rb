@@ -1,35 +1,25 @@
-require_relative 'dish'
 require_relative 'rule'
 require_relative 'selector'
+require_relative 'restaurant'
 
-class Restaurant
+RESTAURANTS = [ Restaurant.new("Potbelly Sandwich Works"),
+                Restaurant.new("Roti"),
+                Restaurant.new("Washington Deli"),
+                Restaurant.new("CF Folks"),
+                Restaurant.new("Baja Fresh"),
+                Restaurant.new("Luke's Lobster"),
+                Restaurant.new("Good Stuff Eatery"),
+                Restaurant.new("Devon & Blakely"),
+                Restaurant.new("Food Trucks"),
+                Restaurant.new("vFalafel", :new),
+                Restaurant.new("Sweet Diablo", :new),
+                Restaurant.new("Sweetgreen", :new),
+                Restaurant.new("Bub and Pop's", :new),
+                Restaurant.new("Cafe Carvy", :new)
+              ]
 
-  attr_reader :name
-  def initialize(name, *tags)
-    @name = name
-    @tags = tags
-  end
+RULES = [ Rule.new(:new?, :min, 2) ]
 
-end
-
-FAVORITES = [ Restaurant.new("Potbelly Sandwich Works"),
-              Restaurant.new("Roti"),
-              Restaurant.new("Washington Deli"),
-              Restaurant.new("CF Folks"),
-              Restaurant.new("Baja Fresh"),
-              Restaurant.new("Luke's Lobster"),
-              Restaurant.new("Good Stuff Eatery"),
-              Restaurant.new("Devon & Blakely"),
-              Restaurant.new("Food Trucks")
-            ]
-
-NEW_PLACES = [ Restaurant.new("vFalafel"),
-               Restaurant.new("Sweet Diablo"),
-               Restaurant.new("Sweetgreen"),
-               Restaurant.new("Bub and Pop's"),
-               Restaurant.new("Cafe Carvy")
-             ]
-
-Selector.new(FAVORITES, NEW_PLACES).select.each do |restaurant|
+Selector.new(RESTAURANTS).select(RULES).each do |restaurant|
   puts restaurant.name
 end
